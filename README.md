@@ -1,9 +1,9 @@
 # py-to-player
 A raspberry pi, RFID controlled, audio player for children
 
-The aim is to create a music/audio book player that will play local files when triggered with an RFID card/sticker. The output device is an existing Amazon Alexa that will be connected with Bluetooth.
-
 These are mostly notes so that I can recall the steps to recreate this project if I need to.
+
+The aim is to create a music/audio book player that will play local files when triggered with an RFID card/sticker. The output device is an existing Amazon Alexa that will be connected with Bluetooth.
 
 ## Equipment list
 - Raspberry Pi zero W
@@ -15,16 +15,23 @@ These are mostly notes so that I can recall the steps to recreate this project i
 I used a pi zero w as this was readibly available with the header already soldered.
 - enable SPIO
 - disable default audio (the HDMI, that I do not want to use)
+
+### Audio Configuration (Making the Bluetooth Speaker work)
+Setting the audio out to use the bluetooth speaker is slightly trickier. 
   
-Setting the audio out to use the bluetooth speaker is slightly trickier. After pairing the speaker in the GUI I tried to set a default config in
-/etc/pulse/client.conf.
+After pairing the bluetooth speaker in the GUI, identify the audio sinks using
 
-Identify the audio sinks using
-- pacmd list-sinks
+`pacmd list-sinks`
 
-As the default config proved unreliable, I have a shell script that launches on boot via the cron tab (sudo crontab -e)
+Initially I tried to set a default sink in the conf file using the name of the sink (this is recommended as the sink number can change).
 
-@reboot sh /launch.sh
+`/etc/pulse/client.conf.`
+
+As the default sink in the conf file proved unreliable, I created a shell script that launches on boot via the cron tab
+
+`sudo crontab -e `
+
+`@reboot sh /launch.sh`
 
 launch.sh contains the following.
 
@@ -36,9 +43,16 @@ launch.sh contains the following.
 
 With these settings, the Raspberry Pi will connect to the Alexa on reboot.
 
+Next, I need the python script to launch after a reboot. I did this by adding the following to the crontab
+
+`add crontab code here`
+
 ## Python environment
 To make this work we need to use the library for the RFID reader. I used https://github.com/pimylifeup/MFRC522-python
-I don't need to be able to write to the RDIF stickers as I'm only using the NTAG-213 stickers to read the ID and use this to determine what audio to play. This allows me to use the NTAG-213 stickers that you get lots of on Amazon/ebay for just a few £.
+
+This library worked well as I don't need to be able to write to the RDIF stickers as I'm only using the NTAG-213 stickers to read the ID and use this to determine what audio to play (the audio files are simply called the name of the NTAG + .mp3. This allows me to use the NTAG-213 stickers that you get lots of on Amazon/ebay for just a few £ - cheap and cheerful.
+
+## Python script
 
 ## Playing the audio
 To play the audio you tap the RFID with the NTAG-213 sticker. To make this easy, we stuck these on the barcodes of the books that we had recorded audio for.
