@@ -45,5 +45,7 @@ To play the audio you tap the RFID with the NTAG-213 sticker. To make this easy,
 
 We also created some custom cards using a MIFARE RFID card that were decorated to identify what would be played.
 
+![Custom card (That plays zoom zoom zoom, we're going to the moon](CustomCard.jpeg)
+
 
 
