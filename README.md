@@ -21,17 +21,17 @@ Setting the audio out to use the bluetooth speaker is slightly trickier.
   
 After pairing the bluetooth speaker in the GUI, identify the audio sinks using
 
-`pacmd list-sinks`
+- `pacmd list-sinks`
 
 Initially I tried to set a default sink in the conf file using the name of the sink (this is recommended as the sink number can change).
 
-`/etc/pulse/client.conf.`
+- `/etc/pulse/client.conf.`
 
 As the default sink in the conf file proved unreliable, I created a shell script that launches on boot via the cron tab
 
-`sudo crontab -e `
+- `sudo crontab -e `
 
-`@reboot sh /launch.sh`
+- `@reboot sh /launch.sh`
 
 launch.sh contains the following.
 
@@ -45,7 +45,7 @@ With these settings, the Raspberry Pi will connect to the Alexa on reboot.
 
 Next, I need the python script to launch after a reboot. I did this by adding the following to the crontab
 
-`add crontab code here`
+- `add crontab code here`
 
 ## Python environment
 To make this work we need to use the library for the RFID reader. I used https://github.com/pimylifeup/MFRC522-python
