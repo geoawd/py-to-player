@@ -24,12 +24,14 @@ The aim is to create a music/audio book player that will play local files when t
 I used a pi zero w as this was readibly available with the header already soldered.
 
 - enable SPI
--- `sudo raspi-config`
--- Interfacing Options
--- SPI
--- Activate > Yes > OK
+- `sudo raspi-config`
+- Interfacing Options
+- SPI
+- Activate > Yes > OK
   
-- disable default audio (the HDMI, that I do not want to use)
+- disable built-in audio (the HDMI, that I do not want to use)
+- `sudo nano /boot/config.txt`
+- #dtparam=audio=on
 
 ## Raspberry Pi Audio Configuration (Making the Bluetooth Speaker work)
 Setting the audio out to use the bluetooth speaker is slightly trickier. 
