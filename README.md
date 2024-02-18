@@ -22,7 +22,7 @@ Setting the audio out to use the bluetooth speaker is slightly trickier. After p
 Identify the audio sinks using
 - pacmd list-sinks
 
-As the defauly config proved unreliable, I have a shell script that launches on boot via the cron tab (sudo crontab -e)
+As the default config proved unreliable, I have a shell script that launches on boot via the cron tab (sudo crontab -e)
 
 @reboot sh /launch.sh
 
