@@ -29,5 +29,8 @@ launch.sh contains the following.
 - pacmd "set-default-source bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor"
 
 ## Python environment
+To make this work we need to use the library for the RFID reader. I used https://github.com/pimylifeup/MFRC522-python
+I don't need to be able to write to the RDIF stickers as I'm only using the NTAG-213 stickers to read the ID and use this to determine what audio to play. This allows me to use the NTAG-213 stickers that you get lots of on amazon for just a few £.
 
-import mfrc522
+
+
