@@ -53,6 +53,12 @@ To make this work we need to use the library for the RFID reader. I used https:/
 This library worked well as I don't need to be able to write to the RDIF stickers as I'm only using the NTAG-213 stickers to read the ID and use this to determine what audio to play (the audio files are simply called the name of the NTAG + .mp3. This allows me to use the NTAG-213 stickers that you get lots of on Amazon/ebay for just a few £ - cheap and cheerful.
 
 ## Python script
+This is mostly commented in the code. The intention was to set the RFID reader to read a tag when it was presented. If the tag matched a file (TAGID + .mp3) then that file would be played; if the tag matched a directory (TAGID) then the files in that directory would be played in a random order.
+
+I also created a couple of 'helper tags' that each call a function:
+
+- One that stops any audio that is playing
+- One that reconnects the bluetooth speaker
 
 ## Playing the audio
 To play the audio you tap the RFID with the NTAG-213 sticker. To make this easy, we stuck these on the barcodes of the books that we had recorded audio for.
