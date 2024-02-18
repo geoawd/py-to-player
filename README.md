@@ -67,5 +67,9 @@ We also created some custom cards using a MIFARE RFID card that were decorated t
 
 ![Custom card (That plays zoom zoom zoom, we're going to the moon](CustomCard.jpeg)
 
+Here's a video of all this working:
+
+
+https://github.com/geoawd/py-to-player/assets/119129964/6a3aa846-1b57-4f23-acfb-dcd90f84ee43
 
 
