@@ -28,7 +28,10 @@ I used a pi zero w as this was readibly available with the header already solder
 - Interfacing Options
 - SPI
 - Activate > Yes > OK
-  
+
+### Install packages
+- 
+   
 ### Disable built-in audio (the HDMI, that I do not want to use)
 - `sudo nano /boot/config.txt`
 - #dtparam=audio=on
