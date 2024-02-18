@@ -14,7 +14,7 @@ These are mostly notes so that I can recall the steps to recreate this project i
 ## Raspberry Pi configuration
 I used a pi zero w as this was readibly available with the header already soldered.
 - enable SPIO
-- disable defualt audio (the HDMI, that I do not want to use)
+- disable default audio (the HDMI, that I do not want to use)
   
 Setting the audio out to use the bluetooth speaker is slightly trickier. After pairing the speaker in the GUI I tried to set a default config in
 /etc/pulse/client.conf.
@@ -28,7 +28,9 @@ As the defauly config proved unreliable, I have a shell script that launches on 
 
 launch.sh contains the following.
 `echo "disconnect 44:3D:54:B9:30:55" | bluetoothctl`
-`cho "connect 44:3D:54:B9:30:55" | bluetoothctl`
+
+`echo "connect 44:3D:54:B9:30:55" | bluetoothctl`
+
 `pacmd "set-default-source bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor"`
 
 With these settings, the Raspberry Pi will connect to the Alexa on reboot.
