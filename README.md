@@ -16,6 +16,15 @@ I used a pi zero w as this was readibly available with the header already solder
 - enable SPIO
 - disable default audio (the HDMI, that I do not want to use)
 
+## RC522 pin configuration
+- SDA connects to Pin 24.
+- SCK connects to Pin 23.
+- MOSI connects to Pin 19.
+- MISO connects to Pin 21.
+- GND connects to Pin 6.
+- RST connects to Pin 22.
+- 3.3v connects to Pin 1.
+
 ### Audio Configuration (Making the Bluetooth Speaker work)
 Setting the audio out to use the bluetooth speaker is slightly trickier. 
   
