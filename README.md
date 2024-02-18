@@ -11,11 +11,6 @@ The aim is to create a music/audio book player that will play local files when t
 - NTAG-213 stickers
 - Amazon Alexa Dot
 
-## Raspberry Pi configuration
-I used a pi zero w as this was readibly available with the header already soldered.
-- enable SPIO
-- disable default audio (the HDMI, that I do not want to use)
-
 ## RC522 pin configuration
 - SDA connects to Pin 24.
 - SCK connects to Pin 23.
@@ -25,7 +20,18 @@ I used a pi zero w as this was readibly available with the header already solder
 - RST connects to Pin 22.
 - 3.3v connects to Pin 1.
 
-### Audio Configuration (Making the Bluetooth Speaker work)
+## Raspberry Pi configuration
+I used a pi zero w as this was readibly available with the header already soldered.
+
+- enable SPI
+-- `sudo raspi-config`
+-- Interfacing Options
+-- SPI
+-- Activate > Yes > OK
+  
+- disable default audio (the HDMI, that I do not want to use)
+
+## Raspberry Pi Audio Configuration (Making the Bluetooth Speaker work)
 Setting the audio out to use the bluetooth speaker is slightly trickier. 
   
 After pairing the bluetooth speaker in the GUI, identify the audio sinks using
