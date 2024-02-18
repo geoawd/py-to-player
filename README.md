@@ -12,13 +12,13 @@ The aim is to create a music/audio book player that will play local files when t
 - Amazon Alexa Dot
 
 ## RC522 pin configuration
-- SDA connects to Pin 24.
-- SCK connects to Pin 23.
-- MOSI connects to Pin 19.
-- MISO connects to Pin 21.
-- GND connects to Pin 6.
-- RST connects to Pin 22.
-- 3.3v connects to Pin 1.
+- SDA connects to Pin 24
+- SCK connects to Pin 23
+- MOSI connects to Pin 19
+- MISO connects to Pin 21
+- GND connects to Pin 6
+- RST connects to Pin 22
+- 3.3v connects to Pin 1
 
 ## Raspberry Pi configuration
 I used a pi zero w as this was readibly available with the header already soldered.
