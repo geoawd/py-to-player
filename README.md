@@ -27,6 +27,7 @@ As the defauly config proved unreliable, I have a shell script that launches on 
 @reboot sh /launch.sh
 
 launch.sh contains the following.
+
 `echo "disconnect 44:3D:54:B9:30:55" | bluetoothctl`
 
 `echo "connect 44:3D:54:B9:30:55" | bluetoothctl`
@@ -41,6 +42,7 @@ I don't need to be able to write to the RDIF stickers as I'm only using the NTAG
 
 ## Playing the audio
 To play the audio you tap the RFID with the NTAG-213 sticker. To make this easy, we stuck these on the barcodes of the books that we had recorded audio for.
+
 We also created some custom cards using a MIFARE RFID card that were decorated to identify what would be played.
 
 
