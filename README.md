@@ -35,8 +35,14 @@ I used a pi zero w as this was readibly available with the header already solder
 
 ### Raspberry Pi Audio Configuration (Making the Bluetooth Speaker work)
 Setting the audio out to use the bluetooth speaker is slightly trickier. 
-  
-After pairing the bluetooth speaker in the GUI, identify the audio sinks using
+
+Pair the bluetooth speaker:
+
+-`bluetoothctl -a`
+-`pair 44:3D:54:B9:30:55 `
+-`trust 44:3D:54:B9:30:55`
+
+After pairing the bluetooth speaker in the GUI, identify the audio sinks using:
 
 - `pacmd list-sinks`
 
