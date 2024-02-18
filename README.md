@@ -42,12 +42,15 @@ Setting the audio out to use the bluetooth speaker is slightly trickier.
 Pair the bluetooth speaker:
 
 -`bluetoothctl -a`
--`pair 44:3D:54:B9:30:55 `
+
+-`pair 44:3D:54:B9:30:55`
+
 -`trust 44:3D:54:B9:30:55`
 
-After pairing the bluetooth speaker in the GUI, identify the audio sinks using:
+After pairing the bluetooth speaker, identify the audio sinks using:
 
 - `pacmd list-sinks`
+- The output will be like: `bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor`
 
 Initially I tried to set a default sink in the conf file using the name of the sink (this is recommended as the sink number can change).
 
@@ -55,9 +58,9 @@ Initially I tried to set a default sink in the conf file using the name of the s
 
 As the default sink in the conf file proved unreliable, I created a shell script that launches on boot via the cron tab
 
-- `sudo crontab -e `
+- `sudo crontab -e`
 
-- `@reboot sh /launch.sh`
+- `@reboot sh /path/to/launch.sh`
 
 launch.sh contains the following.
 
@@ -71,7 +74,7 @@ With these settings, the Raspberry Pi will connect to the Alexa on reboot.
 
 Next, I need the python script to launch after a reboot. I did this by adding the following to the crontab
 
-- `add crontab code here`
+- `@reboot python py-to-player.py`
 
 ## Python environment
 To make this work we need to use the library for the RFID reader. I used https://github.com/pimylifeup/MFRC522-python
