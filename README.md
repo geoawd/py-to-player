@@ -27,9 +27,9 @@ As the defauly config proved unreliable, I have a shell script that launches on 
 @reboot sh /launch.sh
 
 launch.sh contains the following.
-`echo "disconnect 44:3D:54:B9:30:55" | bluetoothctl 
-echo "connect 44:3D:54:B9:30:55" | bluetoothctl
-pacmd "set-default-source bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor"`
+`echo "disconnect 44:3D:54:B9:30:55" | bluetoothctl`
+`cho "connect 44:3D:54:B9:30:55" | bluetoothctl`
+`pacmd "set-default-source bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor"`
 
 With these settings, the Raspberry Pi will connect to the Alexa on reboot.
 
