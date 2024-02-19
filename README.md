@@ -96,7 +96,7 @@ I also created a couple of 'helper tags' that each call a function:
 ## Playing the audio
 To play the audio you tap the RFID reader with the NTAG-213 sticker. To make this easy, we stuck these on the barcodes of the books that we had recorded audio for.
 
-We also created some custom cards using an RFID card (MIFARE) that were decorated to identify what would be played.
+We also created some custom cards using an RFID card (MIFARE) that were decorated to identify what would be played: in this case [i]Zoom Zoom Zoom, We're Going to the Moon [i]
 
 ![Custom card (That plays zoom zoom zoom, we're going to the moon](CustomCard.jpeg)
 
@@ -107,7 +107,7 @@ https://github.com/geoawd/py-to-player/assets/119129964/6a3aa846-1b57-4f23-acfb-
 ## Updating the library
 The easiest way to update the library is:
 - scan an NTAG-213 sticker
-- create an mp3 with this name o and directory of this name containing some audio files
+- create an mp3 with this name (.mp3) or a directory of this name containing some audio files (.mp3)
 - scp these files to the Raspberry Pi
 
 
