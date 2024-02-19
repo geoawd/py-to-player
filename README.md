@@ -78,6 +78,7 @@ To make this work we need to use the library for the RFID reader. I used https:/
 
 ### Install packages
 - pip install pygame
+- pip install spi-dev
 - pip install mfrc-python
 
 This MFRC library worked well as I don't need to be able to write to the RFID stickers. I'm only using the NTAG-213 stickers to read the ID and use this to determine what audio to play (the audio files are simply called the name of the NTAG + .mp3. This allows me to use the NTAG-213 stickers that you get lots of on Amazon/ebay for just a few £ - cheap and cheerful but you will get an authentication error when you read them. You can ignore this. 
