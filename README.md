@@ -31,7 +31,7 @@ I used a Pi Zero W as this was readibly available with the header already solder
    
 ### Disable built-in audio (the HDMI, that I do not want to use)
 - `sudo nano /boot/config.txt`
-- #dtparam=audio=on
+- `#dtparam=audio=on`
 
 ### Raspberry Pi Audio Configuration (Making the Bluetooth Speaker work)
 Setting the audio out to use the bluetooth speaker is slightly trickier. 
@@ -47,7 +47,7 @@ Pair the bluetooth speaker:
 After pairing the bluetooth speaker, identify the audio sinks using:
 
 - `pacmd list-sinks`
-- The output will be like: `bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor`
+- The output will be similar to: `bluez_sink.44_3D_54_B9_30_55.a2dp_sink.monitor`
 
 Initially I tried to set a default sink in the conf file using the name of the sink (this is recommended as the sink number can change).
 
