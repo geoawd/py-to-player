@@ -98,7 +98,11 @@ To play the audio you tap the RFID reader with the NTAG-213 sticker. To make thi
 
 We also created some custom cards using an RFID card (MIFARE) that were decorated to identify what would be played: in this case _Zoom Zoom Zoom, We're Going to the Moon_
 
-![Custom card (That plays zoom zoom zoom, we're going to the moon](CustomCard.jpeg)
+![Custom card (That plays zoom zoom zoom, we're going to the moon)](CustomCard.jpeg)
+
+And here are some RFID tagged books...
+
+![TaggedBooks](https://github.com/geoawd/py-to-player/assets/119129964/68ab7304-4698-47bf-aa26-f814bd8daaa8)
 
 Here's a video of all this working:
 
