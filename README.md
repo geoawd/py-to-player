@@ -38,7 +38,9 @@ Setting the audio out to use the bluetooth speaker is slightly trickier.
 
 Pair the bluetooth speaker:
 
-- `bluetoothctl -a`
+- `bluetoothctl`
+
+- `scan on` (identify the mac address of your speakers)
 
 - `pair 44:3D:54:B9:30:55`
 
