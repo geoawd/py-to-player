@@ -80,7 +80,7 @@ while True:
             if id == 584616865049: #helper card to connect to echo dot
                 connect('44:3D:54:B9:30:55')
                 print("Connecting to echo dot")
-            elif id == 584616865050: #helper card to connect to headphones
+            elif id == 584616996123: #helper card to connect to headphones
                 connect('47:0C:90:0B:86:3A')
                 print("Connecting to headphones")
             elif id == 428997447724: #helper card to pause/resume music
