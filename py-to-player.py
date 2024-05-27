@@ -5,12 +5,30 @@ from mfrc522 import SimpleMFRC522
 import RPi.GPIO as GPIO
 import pygame
 
-def connect():
-     try:
-        os.system('echo "disconnect 44:3D:54:B9:30:55" | bluetoothctl')
-        os.system('echo "connect 44:3D:54:B9:30:55" | bluetoothctl')
-        os.system('pacmd set-default-sink bluez_sink.44_3D_54_B9_30_55.a2dp_sink')
-     except Exception as e:
+def disconnect_all():
+    try:
+        # List all connected devices
+        result = os.popen('bluetoothctl paired-devices').read()
+        devices = result.split('\n')
+        
+        for device in devices:
+            if 'Device' in device:
+                # Extract the device ID
+                device_id = device.split(' ')[1]
+                # Disconnect the device
+                os.system(f'echo "disconnect {device_id}" | bluetoothctl')
+    except Exception as e:
+        print(f"Error during disconnecting: {e}")
+
+def connect(id):
+    try:
+        # Disconnect all connected devices
+        disconnect_all()
+        
+        # Connect to the new device
+        os.system(f'echo "connect {id}" | bluetoothctl')
+        os.system(f'pacmd set-default-sink bluez_sink.{id}.a2dp_sink')
+    except Exception as e:
         print(e)
 
 def playaudio(id):
@@ -59,9 +77,12 @@ while True:
             print("Waiting for rfid to scan...")
             id= reader.read()[0]
             print("Card is:",id)
-            if id == 584616865049: #helper card to connect to bluetooth
-                connect()
-                print("Connecting")
+            if id == 584616865049: #helper card to connect to echo dot
+                connect('44:3D:54:B9:30:55')
+                print("Connecting to echo dot")
+            elif id == 584616865050: #helper card to connect to headphones
+                connect('47:0C:90:0B:86:3A')
+                print("Connecting to headphones")
             elif id == 428997447724: #helper card to pause/resume music
                 pause.toggle()
             elif os.path.isfile('/home/alexdonald/Music/' +str(id) + '.mp3'):
