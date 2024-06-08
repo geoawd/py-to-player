@@ -5,6 +5,8 @@ from mfrc522 import SimpleMFRC522
 import RPi.GPIO as GPIO
 import pygame
 
+pygame.init()
+
 def disconnect_all():
     try:
         # List all connected devices
@@ -64,7 +66,7 @@ class Pause(object):
             pygame.mixer.music.pause()
         self.paused = not self.paused
 
-pygame.init()
+#pygame.init()
 
 pause = Pause()
 
@@ -93,7 +95,7 @@ while True:
             else:
                 print("Nothing to play")
     except Exception as e:
-        pass
+        print (e)
 
     finally:
         print("Cleaning  up...")
